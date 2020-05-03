@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -23,5 +24,18 @@ public class MainActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("file:///android_asset/index.html");
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode==event.KEYCODE_BACK){
+            if(webView.canGoBack()){
+                webView.goBack();
+            }else{
+                moveTaskToBack(true);
+            }
+            return true;
+        }
+        return  super.onKeyDown(keyCode,event);
     }
 }
