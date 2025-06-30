@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 35
+    namespace = "cc.efront.android"
 
     defaultConfig {
-        applicationId "cc.efront.android"
+        applicationId = "cc.efront.android"
         minSdkVersion 14
-        targetSdkVersion 29
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 

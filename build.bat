@@ -1,0 +1,1 @@
+cls&gradlew build --warning-mode all
